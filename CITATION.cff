@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "Please cite the accompanying manuscript when using this certificate."
+type: software
+title: "Planar Lennard-Jones energy certificate"
+authors:
+  - family-names: Colbrook
+    given-names: Matthew J.
+    affiliation: "Department of Applied Mathematics and Theoretical Physics, University of Cambridge"
+    email: m.colbrook@damtp.cam.ac.uk
+keywords:
+  - Lennard-Jones potential
+  - triangular lattice
+  - computer-assisted proof
+  - interval arithmetic
+preferred-citation:
+  type: unpublished
+  title: "The bulk energy of the planar Lennard-Jones potential"
+  authors:
+    - family-names: Colbrook
+      given-names: Matthew J.
+  year: 2026

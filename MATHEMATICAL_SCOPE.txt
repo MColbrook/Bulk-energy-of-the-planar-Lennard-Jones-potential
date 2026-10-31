@@ -1,0 +1,204 @@
+MATHEMATICAL SCOPE OF THE CERTIFICATE
+===================================
+
+Article: The bulk energy of the planar Lennard--Jones potential
+Author: Matthew J. Colbrook
+Affiliation: Department of Applied Mathematics and Theoretical Physics,
+University of Cambridge, Cambridge, United Kingdom
+Corresponding email: m.colbrook@damtp.cam.ac.uk
+Intended journal: Journal of Statistical Physics
+
+This document describes the analytic premises and finite program assertions
+used in the proof.
+
+1. Imported analytic results
+----------------------------
+The source is OpenAI, An atomic certificate for triangular-lattice universal
+optimality, 26 September 2026, at the commit in upstream/manifest.json.
+
+Sections 3--5 provide the specific cardinal basis, Fourier formulas,
+summable-coefficient convergence, the finite reference, and the unique exact
+solution of all positive-node contact equations. In particular Proposition
+5.1 gives, uniformly in the Gaussian parameter alpha >= 1, finite-reference
+coefficient correction less than 10^(-5) and l1 tail less than 3*10^(-9).
+
+Lemma 6.1 provides curvature envelopes. For two finite pole lists each of
+norm at most a_L and two tail lists each of norm at most a_T, its bound for
+one rescaled Fourier-paired input is
+
+  |J''(s)|/2 <= a_L L(s0) + a_T T(s0),  s >= s0,
+
+with L(14.5)=.00465, L(23)=.000023 and T=800 on these ranges.
+The transformed slow constant column contributes at most .002 times the
+absolute value of its coefficient for s >= 14.5. These envelopes already
+account for the direct and transformed lists; no extra factor two is added.
+
+Lemma 6.5 provides the sine-product lower bound
+
+  P(s) > .054 (s-m)^2
+
+away from its zeros, where m is a nearest zero. On [14.5,23] it provides
+P(s)>3(s-m)^2 with m chosen from {16,19,21}. The joining segments stay in the
+appropriate curvature ranges; for s>23 a nearest node is at least 25.
+
+The upstream checker validates the finite arithmetic statements in that
+source. The infinite-dimensional completion, spectral estimates, and their
+analytic consequences follow from the cited results.
+
+2. Additional analytic arguments in the manuscript
+-------------------------------------------------
+The manuscript proves the exact signed-mixture identity in the original
+coefficient space. Uniform coefficient bounds and exponentially decreasing
+normalization justify coefficient integration, Fourier transformation,
+contact evaluation, and the required L1 limits.
+
+The new exact residuals are
+
+  J_R(s)=exp(pi*sigma*s) [G_+^flat(s)-U^flat(s)-Fourier(V)^flat(s)],
+  J_T(s)=exp(pi*sigma*s) [G_-^flat(s)+Fourier(U)^flat(s)+V^flat(s)],
+
+where b=sqrt(3)/2, s=b*r^2, sigma=17/50, and phi^flat(s) denotes the
+squared-radius profile phi(sqrt(s/b),0) of a radial function on R^2.
+The sign program uses h=sigma, H=tau=27/50 and side=0,1 for J_R,J_T.
+Their values and first derivatives vanish at every selected positive node.
+In code, value(s, side) evaluates the finite approximation to the residual.
+
+Poisson summation and its dilation derivative, together with the normalized
+zero-pressure identity, prove Fourier(H)(0)=0 exactly. The finite program
+does not infer this exact zero from a numerically small interval.
+
+The manuscript also supplies the Fourier lower bound for arbitrary finite
+configurations, the physical rescaling, and the limiting upper bound from
+triangular patches.
+
+3. Exact lattice constants
+--------------------------
+src/lattice_constants.py encloses the unit-spacing triangular sums using
+
+  Z_(2q)=6*zeta(q)*L(q,chi_-3), q=3,6,
+  L(q,chi_-3)=3^(-q)[zeta(q,1/3)-zeta(q,2/3)].
+
+It uses exact Fraction arithmetic and an explicit Bernoulli-polynomial
+Euler--Maclaurin remainder. Its docstring derives that remainder. Decimal
+arithmetic is used only for outward display, and the spacing enclosure is
+checked by integer-power comparisons. The Epstein-zeta identity itself is
+an analytic identity used by the computation.
+
+4. Signed finite reference and correction budgets
+-------------------------------------------------
+src/reference_coefficients.py forms the original 20-by-20 sum/difference
+systems and rigorously inverts them with Arb. It computes the Laplace
+moments from upper incomplete gamma functions and combines the two input
+sides exactly as required by the signed mixture. Target jets retained by
+this reference are those at 1,3,4,7. Other contact targets belong to the
+analytic correction; the finite reference need not interpolate them.
+
+The program certifies
+
+  M=integral_1^infinity (|w_+|+|w_-|)/D < .425,
+
+and hence the imported Proposition 5.1 implies, for each new input,
+
+  delta_f = 4.25e-6,    delta_t = 1.275e-9
+
+as strict upper bounds for the finite and tail coefficient corrections.
+The fixed columns have no correction. The signed-weight integrals use
+w_+=A0*alpha^5-B0*alpha^2 and w_-=A0*alpha^(-6)-B0*alpha^(-3),
+with 0<A0<B0. There is one zero of w_+ above 1, so the absolute mass is
+computed by splitting exactly at alpha=(B0/A0)^(1/3).
+
+src/verify_signed_moments.py independently reevaluates these scalar moments
+from the computed A0,B0 intervals and proves that the fourth, sixth, and
+eighth coordinates of the normalized signed target are negative. This
+excludes the target from the original Gaussian parameter polytope, whose
+corresponding coordinates are nonnegative. The sign inequalities for the
+integrated auxiliary function are checked separately by verify_signs.py.
+
+5. Finite spectral bounds and compact signs
+-------------------------------------------
+src/verify_signs.py expands the 15-factor sine product as a finite Fourier
+sum with frequencies t_j=(j-15)/18. It computes the same expansions for
+each finite cardinal. Direct and Fourier-transformed Gaussian atoms and
+their derivatives are evaluated with Arb/Acb enclosures.
+
+The rational tail cardinals admit common-frequency measures. Their total
+variations are bounded by the two finite sums
+
+  sum |p_j| pi |t_j|,
+  (1/2) sum |p_j| pi^2 t_j^2,
+
+both bounded by a common quantity less than 123. Fourier transformation
+of slow atoms gives a prefactor below 4, rate magnitude below 14, and real
+decay greater than 3/5 after multiplication by exp(pi*sigma*s). The program
+checks the endpoints that imply these bounds for every frequency in
+[-5/6,5/6], including the continuous measures of the tail. Consequently the
+tail derivative-error bound for order j on s>=a is
+
+  delta_t * TV * [(5*pi/6)^j + 4*14^j*exp(-3*a/5)].
+
+The finite correction is bounded by delta_f times the sum of the largest
+direct-column and transformed-column derivative envelopes. The two sides
+have separate coefficient lists, both covered by these two summands.
+
+On a rational interval [a,b], midpoint Taylor bounds enclose the complete
+finite-reference function over every point of that interval. Intervals
+are recursively bisected until a rigorous positive lower bound succeeds.
+The algorithm has explicit depth limits and fails if it cannot certify a
+whole interval. It never infers a sign from sampled values. Every accepted
+leaf interval, its rational endpoints, and its certified lower bound are
+recorded in signs.json. The endpoints are also checked to form a partition
+of each region with no gaps or overlaps. The combined curvature and Taylor
+covering is also checked for each profile.
+
+Near a selected contact m, the code proves positive exact second derivative
+on [m-1/16,m+1/16] after subtracting the correction envelope. Exact double
+contacts then imply nonnegativity in the neighborhood.
+
+Between contacts it uses either absolute-error control or a deleted-jet
+bound. If F is the exact residual, R its full finite-reference residual,
+and delta=F-R, the exact identity is
+
+  F(s)=R(s)-R(m)-(s-m)R'(m)
+       +delta(s)-delta(m)-(s-m)delta'(m).
+
+The last three terms have absolute value at most
+
+  (1/2) sup |delta''| (s-m)^2.
+
+Both R(m) and R'(m) are explicitly subtracted. This is essential at nodes
+whose target jets are omitted from the finite reference. No zero reference
+jet is assumed there.
+
+The compact check covers (0,14.5] in real space and [0,14.5] in Fourier
+space. The special origin estimates cover (0,.1] and [0,.001], respectively.
+The Fourier-origin argument uses the analytic identity J_T(0)=0 and the
+verified lower bound J_T'(s)>.9396 throughout [0,.001].
+
+6. Tail and all-radii conclusion
+--------------------------------
+The computed finite pole norms, with the correction added, are below .619.
+The direct slow column of each residual is +gamma*P with
+
+  .001436 < gamma < .001437.
+
+The absolute half-curvature of the signed Gaussian target is less than
+2e-17 for s>=14.5. Adding it to the imported curvature envelopes gives
+
+  K_1=.619*.00465 +800*delta_t+.001437*.002+2e-17
+     =.00288224400000002 < .001436*3 = .004308,
+
+  K_2=.619*.000023+800*delta_t+.001437*.002+2e-17
+     =.00001813100000002 < .001436*.054 = .000077544.
+
+The first comparison applies on [14.5,23]; the second applies above 23.
+Together with the exact double contacts and the cited sine-product lower bound,
+they imply the signs on the entire remaining half-line. Thus the compact
+and tail checks cover all required radii, conditional on the stated
+analytic premises.
+
+7. Scope of a successful run
+----------------------------
+A PASS means that the specified finite arithmetic assertions were satisfied
+with the pinned dependency and verified source hashes. The analytic
+interpolation, convergence, Fourier comparison, and thermodynamic-limit
+arguments are supplied by the manuscript and its cited sources.

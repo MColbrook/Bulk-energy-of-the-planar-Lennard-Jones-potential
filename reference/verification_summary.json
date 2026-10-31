@@ -1,0 +1,170 @@
+{
+  "scope": "Finite inequalities and arithmetic only; analytic premises are stated in MATHEMATICAL_SCOPE.txt",
+  "started_at_utc": "2026-10-31T10:05:55.827476+00:00",
+  "python": "3.12.14",
+  "python_flint": "0.9.0",
+  "flint": "3.6.0",
+  "working_precision_bits": 160,
+  "upstream_commit": "fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb",
+  "source_manifest_sha256": "9d3893d7c608e074b779707a9ec84dff31cb34f6cd88c7ec0be405432368dd36",
+  "source_files": [
+    {
+      "path": ".gitattributes",
+      "sha256": "b0f34423270e6498a351131e0397dcc1fdbabe0c1a4ebd6e17ee4d74503eeadb"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "2475f8eb83f58b1e95df2c7fa9a920cb4aae67e6e301d549f1874cad0299e223"
+    },
+    {
+      "path": "CITATION.cff",
+      "sha256": "f402381dcd1e886afd627ad1f6018cff6cd723ba3f9c81621e8eb65eefaf30aa"
+    },
+    {
+      "path": "MATHEMATICAL_SCOPE.txt",
+      "sha256": "ba68ce403d58da1a01af1374c39d8ad80b3282f7c048b30e64019ea6b49ec387"
+    },
+    {
+      "path": "README.md",
+      "sha256": "7ab6f1ef641a754dd080e0c1299d2f1bcfe31cc9b28ebdf905a7ce39202bd2ba"
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "4cef508304e84c21f73cf412712165dc26e40978cb784bc08a876948b559d90d"
+    },
+    {
+      "path": "run_verification.py",
+      "sha256": "156b3a8c8a74f5c1849ed28330244499abe1d1e731de1737febf4533506bc86f"
+    },
+    {
+      "path": "src/lattice_constants.py",
+      "sha256": "9d60f680b633f1eaae252c172a55c4ffcd7de2b10229e59be2d5f46cf8470027"
+    },
+    {
+      "path": "src/reference_coefficients.py",
+      "sha256": "e2de5a039f10fb249dd7dde59902c29b0f5728a5aff8f2f0cdee7ee5805edaa2"
+    },
+    {
+      "path": "src/verify_signed_moments.py",
+      "sha256": "130e8577d4c4bb01a26ced46d6fb9513535a417c59af9201378fff831e36de90"
+    },
+    {
+      "path": "src/verify_signs.py",
+      "sha256": "4de0012be07af19c2a71e9456de176362f5055f4c4ba79703cc069811a74f96f"
+    },
+    {
+      "path": "upstream/LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "path": "upstream/atomic/README.md",
+      "sha256": "bc8fde5bd747b0af2a9bc8a06a6a288bd95c01af1aef2d263a099b5196f02d3d"
+    },
+    {
+      "path": "upstream/atomic/build/main.tex",
+      "sha256": "bfa619a454d49596b65f310f0bfdce3ae3f5ed6545bd9058d0c6316843ded2a6"
+    },
+    {
+      "path": "upstream/atomic/build/references.bib",
+      "sha256": "e18632be14b8d6d2036818023d9c4451efdbc3ae9536e28bdbdc3155c225066d"
+    },
+    {
+      "path": "upstream/atomic/paper.pdf",
+      "sha256": "83e0d874119abae56db94fb1ecd6ebb794753d4982464b4f9788e5158708be93"
+    },
+    {
+      "path": "upstream/atomic/verification/CERTIFICATE.json",
+      "sha256": "76e1ad0b480f84dc00308c76498125426090918df1ecd1630b2ab1e6da28040d"
+    },
+    {
+      "path": "upstream/atomic/verification/README.md",
+      "sha256": "750627b067a5290f679b6292e08908ff56561767a40f29ea9ed9742eb78d992e"
+    },
+    {
+      "path": "upstream/atomic/verification/check_certificate.py",
+      "sha256": "5689152e970b652a8e40c3c120eda3b45320c8745968a5cb416fa9b9dbdc5385"
+    },
+    {
+      "path": "upstream/manifest.json",
+      "sha256": "0ee9413648b370f186b4edb0516de0013cb11132dff214cd52e5403aa964412b"
+    }
+  ],
+  "steps": [
+    {
+      "step": "upstream_finite_certificate",
+      "exit_code": 0,
+      "elapsed_seconds": 4.579000000027008,
+      "log": "logs\\upstream_finite_certificate.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "step": "lattice_constants",
+      "exit_code": 0,
+      "elapsed_seconds": 0.09299999999348074,
+      "log": "logs\\lattice_constants.log",
+      "log_sha256": "1be6bf9f1c8f024de6e45236783e4aa8f5e91866c717018111372756bcc1731f",
+      "output": "lattice_constants.json",
+      "output_sha256": "93f035848573e0eb8ea5b0e83f35e3eef29e506a2253ac6a4f41ddee907437aa"
+    },
+    {
+      "step": "reference_coefficients",
+      "exit_code": 0,
+      "elapsed_seconds": 0.28200000000651926,
+      "log": "logs\\reference_coefficients.log",
+      "log_sha256": "7da75dc368f95f1b84da2801a96c15141eb3296519def65f65ef60bd200439a2",
+      "output": "reference_coefficients.json",
+      "output_sha256": "b733d132ab7456fcf53200301dc80bd29400fa9d20149a47883686d551e10587"
+    },
+    {
+      "step": "signed_moments",
+      "exit_code": 0,
+      "elapsed_seconds": 0.17099999997299165,
+      "log": "logs\\signed_moments.log",
+      "log_sha256": "32a14ec676fde5441a2f9666e194cd3291dc109a5fde854e12a1dc93d0bf4b2f",
+      "output": "signed_moments.json",
+      "output_sha256": "45c0e45465f1b835a5b3cacd8f9a835a4923bd11c928bfc98fc191d85d8b73ad"
+    },
+    {
+      "step": "global_sign_inequalities",
+      "exit_code": 0,
+      "elapsed_seconds": 16.969000000040978,
+      "log": "logs\\global_sign_inequalities.log",
+      "log_sha256": "a9969749bb554a5a3fb8cb75d828f64d8669de6f8131284ec4fe36eaee772acd",
+      "output": "signs.json",
+      "output_sha256": "9789d18d6f3409695a8b70997d4cb8de1acbd4dcdaea73d77d86e91c7613013b"
+    }
+  ],
+  "all_finite_checks_passed": true,
+  "elapsed_seconds": 22.094000000040978,
+  "results": {
+    "absolute_mixture_mass": "[0.4248978918281071488996 +/- 7.37e-23]",
+    "inherited_finite_error": "[4.248978918281071488996e-6 +/- 7.37e-28]",
+    "inherited_tail_error": "[1.274693675484321446699e-9 +/- 4.21e-31]",
+    "curvature_intervals": 231,
+    "other_taylor_intervals": 583,
+    "fourier_origin_derivative": "[0.9396462510919638490460 +/- 8.29e-23]",
+    "tail": {
+      "source_lemmas": [
+        "6.1",
+        "6.5"
+      ],
+      "finite_pole_norm_bound": "[0.61698277601032124078531317404865771036504799717 +/- 4.25e-49]",
+      "slow_coefficient": "[0.0014365204888994157229865 +/- 6.04e-26]",
+      "target_half_curvatures_at_14.5": [
+        "[1.5477733278697191595498e-17 +/- 3.45e-40]",
+        "[1.3599651488356507065796e-17 +/- 2.55e-40]"
+      ],
+      "range_14.5_to_23": {
+        "half_curvature": "[0.0028822440000000200000000000000000000000000000000 +/- 2.47e-50]",
+        "barrier": "[0.0043080000000000000000000000000000000000000000000 +/- 1.47e-50]",
+        "margin": "[0.0014257559999999800000000000000000000000000000000 +/- 2.87e-50]"
+      },
+      "range_above_23": {
+        "half_curvature": "[1.8131000000020000000000000000000000000000000000e-5 +/- 1.55e-52]",
+        "barrier": "[7.7544000000000000000000000000000000000000000000e-5 +/- 2.89e-52]",
+        "margin": "[5.9412999999980000000000000000000000000000000000e-5 +/- 4.03e-52]"
+      }
+    },
+    "normalized_polytope_fourth_coordinate": "[-0.0003754773244849705437647 +/- 4.10e-26]"
+  }
+}

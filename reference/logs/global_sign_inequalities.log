@@ -1,0 +1,16 @@
+0.0s origin checks passed using reference norms plus inherited errors
+0.6s side0 passed through node1; 10 curvature intervals
+1.3s side0 passed through node3; 16 curvature intervals
+2.5s side0 passed through node4; 16 curvature intervals
+3.4s side0 passed through node7; 8 curvature intervals
+4.2s side0 passed through node9; 8 curvature intervals
+5.2s side0 passed through node12; 14 curvature intervals
+6.0s side0 passed through node13; 11 curvature intervals
+7.2s side1 passed through node1; 14 curvature intervals
+9.4s side1 passed through node3; 49 curvature intervals
+11.5s side1 passed through node4; 44 curvature intervals
+12.7s side1 passed through node7; 8 curvature intervals
+13.8s side1 passed through node9; 8 curvature intervals
+15.0s side1 passed through node12; 14 curvature intervals
+16.3s side1 passed through node13; 11 curvature intervals
+16.8s PASS: original coarse errors suffice; 231 curvature and 583 other Taylor intervals; inherited tail from 14.5

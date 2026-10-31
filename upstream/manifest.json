@@ -1,0 +1,69 @@
+{
+  "repository": "https://github.com/openai/math",
+  "commit": "fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb",
+  "source_directory": "preprints/An-atomic-certificate-for-triangular-lattice-universal-optimality-September-26-2026",
+  "files": [
+    {
+      "relative_path": "README.md",
+      "upstream_blob_sha": "ea7765ae60beb769f18fe28c586f3dedd9431f1f",
+      "sha256": "bc8fde5bd747b0af2a9bc8a06a6a288bd95c01af1aef2d263a099b5196f02d3d",
+      "size": 1036,
+      "url": "https://raw.githubusercontent.com/openai/math/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb/preprints/An-atomic-certificate-for-triangular-lattice-universal-optimality-September-26-2026/README.md"
+    },
+    {
+      "relative_path": "build/main.tex",
+      "upstream_blob_sha": "dad316cc2ad861a7482d79b46b6f840ed83d2a5e",
+      "sha256": "bfa619a454d49596b65f310f0bfdce3ae3f5ed6545bd9058d0c6316843ded2a6",
+      "size": 103614,
+      "url": "https://raw.githubusercontent.com/openai/math/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb/preprints/An-atomic-certificate-for-triangular-lattice-universal-optimality-September-26-2026/build/main.tex"
+    },
+    {
+      "relative_path": "build/references.bib",
+      "upstream_blob_sha": "79aa056dc24c550e493f299db9b09fd3a685b0b4",
+      "sha256": "e18632be14b8d6d2036818023d9c4451efdbc3ae9536e28bdbdc3155c225066d",
+      "size": 8016,
+      "url": "https://raw.githubusercontent.com/openai/math/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb/preprints/An-atomic-certificate-for-triangular-lattice-universal-optimality-September-26-2026/build/references.bib"
+    },
+    {
+      "relative_path": "paper.pdf",
+      "upstream_blob_sha": "70092bc9dc23cafb8ae291d7290053b9fd4132d0",
+      "sha256": "83e0d874119abae56db94fb1ecd6ebb794753d4982464b4f9788e5158708be93",
+      "size": 481427,
+      "url": "https://raw.githubusercontent.com/openai/math/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb/preprints/An-atomic-certificate-for-triangular-lattice-universal-optimality-September-26-2026/paper.pdf"
+    },
+    {
+      "relative_path": "verification/CERTIFICATE.json",
+      "upstream_blob_sha": "f102997a8419df4621b276613d43443391ccc64a",
+      "sha256": "76e1ad0b480f84dc00308c76498125426090918df1ecd1630b2ab1e6da28040d",
+      "size": 771,
+      "url": "https://raw.githubusercontent.com/openai/math/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb/preprints/An-atomic-certificate-for-triangular-lattice-universal-optimality-September-26-2026/verification/CERTIFICATE.json"
+    },
+    {
+      "relative_path": "verification/README.md",
+      "upstream_blob_sha": "e2b9d904c74538450cea628476bcd6c772776c23",
+      "sha256": "750627b067a5290f679b6292e08908ff56561767a40f29ea9ed9742eb78d992e",
+      "size": 680,
+      "url": "https://raw.githubusercontent.com/openai/math/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb/preprints/An-atomic-certificate-for-triangular-lattice-universal-optimality-September-26-2026/verification/README.md"
+    },
+    {
+      "relative_path": "verification/check_certificate.py",
+      "upstream_blob_sha": "23768a5c2d88e100399bb5c4347447e86a7160cb",
+      "sha256": "5689152e970b652a8e40c3c120eda3b45320c8745968a5cb416fa9b9dbdc5385",
+      "size": 12726,
+      "url": "https://raw.githubusercontent.com/openai/math/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb/preprints/An-atomic-certificate-for-triangular-lattice-universal-optimality-September-26-2026/verification/check_certificate.py"
+    }
+  ],
+  "current_main_top_level_matches": true,
+  "current_main_top_level": {
+    "README.md": "ea7765ae60beb769f18fe28c586f3dedd9431f1f",
+    "build": "01bf2a733d635bfb004d03248b1e7fe26e8c8469",
+    "paper.pdf": "70092bc9dc23cafb8ae291d7290053b9fd4132d0",
+    "verification": "9df97fb58771a644fb8a72ba0c3d6610f725b1ec"
+  },
+  "pinned_top_level": {
+    "README.md": "ea7765ae60beb769f18fe28c586f3dedd9431f1f",
+    "build": "01bf2a733d635bfb004d03248b1e7fe26e8c8469",
+    "paper.pdf": "70092bc9dc23cafb8ae291d7290053b9fd4132d0",
+    "verification": "9df97fb58771a644fb8a72ba0c3d6610f725b1ec"
+  }
+}

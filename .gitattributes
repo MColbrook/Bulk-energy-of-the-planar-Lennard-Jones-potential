@@ -1,0 +1,7 @@
+# Stable line endings for source hashes on every platform.
+* text=auto eol=lf
+
+# Preserve the byte-level hashes of redistributed files and execution outputs.
+/upstream/** -text
+/reference/** -text
+*.pdf binary
