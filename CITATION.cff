@@ -1,10 +1,11 @@
 cff-version: 1.2.0
-message: "Please cite the accompanying manuscript when using this certificate."
+message: "Please cite the accompanying preprint when using this certificate."
 type: software
 title: "Planar Lennard-Jones energy certificate"
 authors:
   - family-names: Colbrook
     given-names: Matthew J.
+    orcid: "https://orcid.org/0000-0003-4964-9575"
     affiliation: "Department of Applied Mathematics and Theoretical Physics, University of Cambridge"
     email: m.colbrook@damtp.cam.ac.uk
 keywords:
@@ -18,4 +19,7 @@ preferred-citation:
   authors:
     - family-names: Colbrook
       given-names: Matthew J.
+      orcid: "https://orcid.org/0000-0003-4964-9575"
   year: 2026
+  doi: "10.5281/zenodo.23835694"
+  url: "https://zenodo.org/records/23835694"

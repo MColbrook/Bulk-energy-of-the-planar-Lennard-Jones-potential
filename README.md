@@ -1,7 +1,7 @@
 # Planar Lennard–Jones energy certificate
 
-Reproducible verification code accompanying **The bulk energy of the planar
-Lennard–Jones potential**, by Matthew J. Colbrook.
+Reproducible verification code accompanying **[The bulk energy of the planar
+Lennard–Jones potential](https://zenodo.org/records/23835694)**, by Matthew J. Colbrook.
 
 The certificate verifies the finite inequalities for the signed Gaussian
 interpolation construction in the paper. It regenerates the lattice constants,
@@ -101,10 +101,10 @@ programs.
 
 ## Citation and contact
 
-Please cite the accompanying manuscript:
+Please cite the accompanying preprint:
 
 > Matthew J. Colbrook. *The bulk energy of the planar Lennard–Jones potential*.
-> Manuscript, 2026.
+> Zenodo, 2026. [https://doi.org/10.5281/zenodo.23835694](https://doi.org/10.5281/zenodo.23835694).
 
 Machine-readable metadata are provided in [`CITATION.cff`](CITATION.cff).
 
